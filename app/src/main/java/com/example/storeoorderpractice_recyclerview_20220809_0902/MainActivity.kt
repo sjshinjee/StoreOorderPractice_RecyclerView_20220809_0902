@@ -18,7 +18,6 @@ class MainActivity : BaseActivity() {
         setValues()
          }
 
-
 //      모든 이벤트 처리를 여기서 할 거다
         override fun setupEvents() {
 
