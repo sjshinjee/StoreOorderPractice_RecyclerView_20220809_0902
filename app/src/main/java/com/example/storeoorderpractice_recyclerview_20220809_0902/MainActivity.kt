@@ -28,7 +28,7 @@ class MainActivity : BaseActivity() {
         override fun setValues() {
             mPagerAdapter = MainViewPagerAdapter(supportFragmentManager)
             binding.mainViewPager.adapter =  mPagerAdapter
-            binding.mainTabLayout.setupWith
+            binding.mainTabLayout.setupWithViewPager(binding.mainViewPager)
         }
 
 
