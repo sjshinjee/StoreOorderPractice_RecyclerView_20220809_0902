@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.storeoorderpractice_recyclerview_20220809_0902.R
+import com.example.storeoorderpractice_recyclerview_20220809_0902.adapters.StoreRecyclerViewAdapter
 import com.example.storeoorderpractice_recyclerview_20220809_0902.databinding.FragmentPizzaStoreBinding
 import com.example.storeoorderpractice_recyclerview_20220809_0902.datas.StoreData
 
@@ -14,6 +16,8 @@ class PizzaStoreFragment : BaseFragment() {
     lateinit var binding : FragmentPizzaStoreBinding
 
     val mList = ArrayList<StoreData>()
+
+    lateinit var mStoreAdapter : StoreRecyclerViewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,5 +40,11 @@ class PizzaStoreFragment : BaseFragment() {
         mList.add(StoreData("파파존스", 4.5,  "http://mblogthumb-phinf.pstatic.net/20160530_116/ppanppane_14646177654870uGy9_PNG/%C6%C4%C6%C4%C1%B8%BD%BA_%C7%C7%C0%DA_%B7%CE%B0%ED_%281%29.png?type=w800", "1577-8080"))
         mList.add(StoreData("도미노피자", 3.7, "https://www.pngplay.com/wp-content/uploads/6/Dominos-Pizza-Logo-Background-PNG-Image.png", "1577-3082"))
         mList.add(StoreData("미스터피자", 3.5,  "https://mblogthumb-phinf.pstatic.net/20160530_62/ppanppane_14646177047843NP3E_PNG/%B9%CC%BD%BA%C5%CD%C7%C7%C0%DA_%B7%CE%B0%ED_%283%29.png?type=w800", "1577-0077"))
+
+        mStoreAdapter = StoreRecyclerViewAdapter(mContext, mList)
+        binding.storeRecyclerView.adapter = mStoreAdapter
+        binding.storeRecyclerView.layoutManager = LinearLayoutManager(mContext)
+
+
     }
 }
