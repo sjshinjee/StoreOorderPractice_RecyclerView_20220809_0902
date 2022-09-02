@@ -1,5 +1,7 @@
 package com.example.storeoorderpractice_recyclerview_20220809_0902
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -20,7 +22,17 @@ class DetailStoreActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+        binding.callBtn.setOnClickListener {
+            val myUri = Uri.parse("tel:${storeData.phoneNum}")
+            val myIntent = Intent(Intent.ACTION_DIAL, myUri)
+            startActivity(myIntent)
+        }
 
+        binding.homePageBtn.setOnClickListener {
+            val myUri = Uri.parse("${storeData.siteUrl}")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+        }
     }
 
     override fun setValues() {
