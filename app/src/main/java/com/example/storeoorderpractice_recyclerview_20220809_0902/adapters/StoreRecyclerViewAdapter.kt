@@ -4,9 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.storeoorderpractice_recyclerview_20220809_0902.R
 import com.example.storeoorderpractice_recyclerview_20220809_0902.datas.StoreData
+import com.willy.ratingbar.ScaleRatingBar
 
 class StoreRecyclerViewAdapter(
     val mContext: Context,
@@ -15,7 +19,15 @@ class StoreRecyclerViewAdapter(
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view){
         fun bind(item : StoreData){
+            val titleTxt = itemView.findViewById<TextView>(R.id.titleTxt)
+            val storeImg = itemView.findViewById<ImageView>(R.id.storeImg)
+            val scaleRatingBar = itemView.findViewById<ScaleRatingBar>(R.id.scoreRatingBar)
 
+            titleTxt.text = item.title
+            Glide.with(mContext)
+                .load(item.imageUri)
+                .into(storeImg)
+            scaleRatingBar.rating = item.score.toFloat()
         }
     }
 
