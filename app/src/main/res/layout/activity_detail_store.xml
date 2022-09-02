@@ -90,10 +90,10 @@
                 android:layout_weight="1"/>
 
             <Button
-                android:id="callBtn"
+                android:id="@+id/callBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="주문하기"
+                android:text="주문하기"/>
 
 
         </LinearLayout>
