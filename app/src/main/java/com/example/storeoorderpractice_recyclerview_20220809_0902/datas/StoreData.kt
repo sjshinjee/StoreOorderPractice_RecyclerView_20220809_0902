@@ -1,5 +1,7 @@
 package com.example.storeoorderpractice_recyclerview_20220809_0902.datas
 
+import java.io.Serializable
+
 class StoreData(
     val title : String,
     val score : Double,
@@ -7,6 +9,6 @@ class StoreData(
     val phoneNum : String,
     val siteUrl : String
 
-) {
+) : Serializable{
 
 }
