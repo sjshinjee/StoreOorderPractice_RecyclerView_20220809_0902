@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-//CardView가 클릭 했을때 이쁨
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +32,17 @@
                 android:textColor="@color/black"
                 android:text="가게 이름 자리"/>
 
-            <scaleRatin
+            <com.willy.ratingbar.ScaleRatingBar
+                android:id="@+id/scoreRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:srb_stepSize="0.5"
+                app:srb_isIndicator="true"
+                app:srb_starHeight="25dp"
+                app:srb_starWidth="25dp"/>
+
+
 
         </LinearLayout>
 
