@@ -7,7 +7,9 @@ import com.example.storeoorderpractice_recyclerview_20220809_0902.fragments.Pizz
 import com.example.storeoorderpractice_recyclerview_20220809_0902.fragments.ProfileFragment
 
 class MainViewPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
+//    필수구현함수들
     override fun getCount() = 2
+
     override fun getItem(position: Int): Fragment {
         return when (position){
             0 -> PizzaStoreFragment()
@@ -21,4 +23,9 @@ class MainViewPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
             else -> "내 정보 수정"
         }
     }
+
+
+
+
+
 }
